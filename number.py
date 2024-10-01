@@ -1,5 +1,3 @@
-
-    if number_type == "Nomor Premium":
         print(Fore.MAGENTA + "Peringatan: Ini adalah nomor premium, mungkin dikenakan biaya tambahan.")
     else:
         print(Fore.MAGENTA + "Ini bukan nomor premium.")
