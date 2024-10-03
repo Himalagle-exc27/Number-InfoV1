@@ -32,7 +32,7 @@ print("Your Public IP:", ip_data['ip'])
 
 import socket
 
-def get_local_ip():                                                                                 > # Mengambil hostname dari perangkat
+def get_local_ip():                                                                                  # Mengambil hostname dari perangkat
     hostname = socket.gethostname()
     # Mendapatkan alamat IP lokal dari hostname
     local_ip = socket.gethostbyname(hostname)
