@@ -32,7 +32,7 @@ print("Your Public IP:", ip_data['ip'])
 
 import socket
 
-def get_local_ip():                                                                                  # Mengambil hostname dari perangkat
+def get_local_ip():                                                                                                  >
     hostname = socket.gethostname()
     # Mendapatkan alamat IP lokal dari hostname
     local_ip = socket.gethostbyname(hostname)
@@ -84,13 +84,13 @@ try:
     region = geocoder.description_for_number(mobileNo, "id")
     print(Fore.BLUE + "Region:", region)
 
-is_valid = phonenumbers.is_valid_number(mobileNo)
+    is_valid = phonenumbers.is_valid_number(mobileNo)
     print(Fore.BLUE + "Valid Number:", is_valid)
 
     is_possible = phonenumbers.is_possible_number(mobileNo)
     print(Fore.BLUE + "Number Maybe Valid:", is_possible)
 
-    international_format = phonenumbers.format_number(mobileNo, phonenumbers.PhoneNumberFormat.INTER>
+    international_format = phonenumbers.format_number(mobileNo, phonenumbers.PhoneNumberFormat.INTERNATIONAL)
     print(Fore.BLUE + "International Format:", international_format)
 
     mobile_format = phonenumbers.format_number(mobileNo, phonenumbers.PhoneNumberFormat.NATIONAL)
@@ -105,7 +105,7 @@ is_valid = phonenumbers.is_valid_number(mobileNo)
     local_number = mobileNo.national_number
     print(Fore.BLUE + "Local Number:", local_number)
 
-    number_length = len(str(local_number))
+number_length = len(str(local_number))
     print(Fore.BLUE + "Number Length:", number_length)
     number_type = get_number_type(mobileNo)
 
@@ -122,17 +122,17 @@ is_valid = phonenumbers.is_valid_number(mobileNo)
     else:
         print(Fore.BLUE + "There is no time zone associated with this number.")
 
-    is_possible_as_mobile = phonenumbers.is_possible_number_for_type(mobileNo, PhoneNumberType.MOBIL>
+    is_possible_as_mobile = phonenumbers.is_possible_number_for_type(mobileNo, PhoneNumberType.MOBILE)
     print(Fore.BLUE + "Probably as a phone number:", is_possible_as_mobile)
 
     has_extension = mobileNo.extension is not None
     print(Fore.BLUE + "Has Extension:", has_extension)
 
-    optimal_format = phonenumbers.format_by_pattern(mobileNo, phonenumbers.PhoneNumberFormat.INTERNA>
+    optimal_format = phonenumbers.format_by_pattern(mobileNo, phonenumbers.PhoneNumberFormat.INTERNATIONAL, [])
     print(Fore.BLUE + "Optimal Format:", optimal_format)
 
     is_valid_for_region = phonenumbers.is_valid_number_for_region(mobileNo, "ID")
-    print(Fore.BLUE + "Valid for Region Indonesia:", is_valid_for_region)
+    print(Fore.BLUE + "Valid for Region:", is_valid_for_region)
 
     metadata = PhoneMetadata.load_all()
     print(Fore.BLUE + "Phone Number Metadata Is Loaded")
